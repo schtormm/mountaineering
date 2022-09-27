@@ -12,7 +12,7 @@ print(f"Hello, {name}! Nice to meet you! Are you ready to go on an expedition?")
 
 while notDead == True:
     if startingpointPassed == False:
-        print("Welcome to the village! Here you can get your supplies")
+        print(f"Welcome to the village, {name}! Here you can get your supplies")
         villageChoice = input("Where do you wanna go, the store or the blacksmith?")
         villageChoice = villageChoice.lower()
         print(villageChoice)
@@ -22,7 +22,7 @@ while notDead == True:
             luckyDay = random.randint(1,6)
             print(luckyDay)
             if luckyDay == 4:
-                print("Today is your lucky day! If you can solve this puzzle you win some extra boots!")
+                print(f"Today is your lucky day, {name}! If you can solve this puzzle you win some extra boots!")
             else:
                 storePurchase = print("What do you wanna buy?")
                 
