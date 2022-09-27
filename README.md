@@ -1,4 +1,4 @@
-# mountaineering
+# Mountaineering
 Text based mountaineering game (week long project)
 
 # necessities
