@@ -2,7 +2,7 @@ import random
 
 notDead = True
 startingpointPassed = False
-storePurchasableItems = []
+storePurchasableItems = ["ice pick", "oxygen bottle" , "Rope"]
 inventory = []
 
 print("Welcome to the start point of mountaineering!")
