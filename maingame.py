@@ -27,6 +27,36 @@ while notDead == True:
             print(luckyDay)
             if luckyDay == 4:
                 print(f"Today is your lucky day, {name}! If you can solve this puzzle you win some extra boots!")
+                word = ("bear")
+                tries = 0
+                length = len(word)
+                display = "_"*len(word)
+                print("the length of the word is:", length)
+                print ("you have got 5 guesses")
+                for i in range(0,5):
+                    guess = input("guess a letter:")
+                    list = [guess]
+                    if guess in word:
+                        i = word.find(guess)
+                        display = display[:i] + guess + display[i + 1:] 
+                        print (display) 
+                        tries += 1 
+                        if display == "bear" :
+                            print("you guessed the word!, you have won some climbing boots!")
+                            inventory.append("climbing boots")
+                            break
+                    else:
+                        print ("that letter is not in the word")
+                        tries += 1
+                if tries == 5:
+                    final_guess = input("what is the word?") 
+                    if final_guess == ("bear"):
+                        print("correct, you won some climbing boots!")
+                        inventory.append(" climbing boots") 
+                    else:
+                        print ("incorrect, Try again")     
+
+
             else:
                 print ("your lucky number is not 4, you win nothing.")
                 print ("here's a list of items that can be bought here:")
