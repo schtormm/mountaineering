@@ -25,19 +25,25 @@ while notDead == True:
             if luckyDay == 4:
                 print(f"Today is your lucky day, {name}! If you can solve this puzzle you win some extra boots!")
             else:
+                print ("your lucky number is not 4, you win nothing.")
+                print ("here's a list of items that can be bought here:")
+                print(storePurchasableItems)
                 storePurchase = input("What do you wanna buy? \n")
                 storePurchase = storePurchase.lower()
                 if storePurchase in storePurchasableItems:
                     inventory.append(storePurchase)
                     print(inventory)
         elif villageChoice == "blacksmith":
-            print("Welcome to the store, here you can get useful climbing gear")
+            print("Welcome to the blacksmith, here you can get useful climbing gear")
             luckyDay = random.randint(1,6)
             print(luckyDay)
             if luckyDay == 6:
                 print(f"Today is your lucky day, {name}! If you can solve this puzzle you win some special climbing shoes!")
             else:
-                blacksmithPurchase = input("What do you wanna buy? \n")
+                print ("your lucky number is not 6, you win nothing.")
+                print ("here's a list of items that can be bought here:")
+                print (blacksmithPurchableItems)
+                blacksmithPurchase = input("What do you wanna buy? \n")                
                 blacksmithPurchase = blacksmithPurchase.lower()
                 if blacksmithPurchase in blacksmithPurchableItems:
                     inventory.append(blacksmithPurchase)
