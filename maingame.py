@@ -31,10 +31,10 @@ while notDead == True:
                 tries = 0
                 length = len(word)
                 display = "_"*len(word)
-                print("the length of the word is:", length)
-                print ("you have got 5 guesses")
+                print("The length of the word is:", length)
+                print ("You have got 5 guesses")
                 for i in range(0,5):
-                    guess = input("guess a letter:")
+                    guess = input("Guess a letter:")
                     list = [guess]
                     if guess in word:
                         i = word.find(guess)
@@ -42,39 +42,41 @@ while notDead == True:
                         print (display) 
                         tries += 1 
                         if display == "bear" :
-                            print("you guessed the word!, you have won some climbing boots!")
+                            print("You guessed the word!, you have won some climbing boots!")
                             inventory.append("climbing boots")
                             break
                     else:
-                        print ("that letter is not in the word")
+                        print ("That letter is not in the word")
                         tries += 1
                 if tries == 5:
-                    final_guess = input("what is the word?") 
+                    final_guess = input("What is the word?") 
                     if final_guess == ("bear"):
-                        print("correct, you won some climbing boots!")
-                        inventory.append(" climbing boots") 
+                        print("Correct, you won some climbing boots!")
+                        inventory.append("climbing boots") 
                     else:
-                        print ("incorrect, Try again")     
+                        print ("Incorrect, Try again")     
 
 
             else:
-                print ("your lucky number is not 4, you win nothing.")
-                print ("here's a list of items that can be bought here:")
+                print ("Your lucky number is not 4, you win nothing.")
+                print ("Here's a list of items that can be bought here:")
                 print(storePurchasableItems)
                 storePurchase = input("What do you wanna buy? \n")
                 storePurchase = storePurchase.lower()
                 if storePurchase in storePurchasableItems:
                     inventory.append(storePurchase)
                     print(inventory)
+                else:
+                    continue
         elif villageChoice == "blacksmith":
             print("Welcome to the blacksmith, here you can get useful climbing gear")
             luckyDay = random.randint(1,6)
             print(luckyDay)
             if luckyDay == 6:
-                print(f"Today is your lucky day, {name}! If you can solve this puzzle you win some special climbing shoes!")
+                print(f"Today is your lucky day, {name}! If you can solve this puzzle you win a sword!")
             else:
-                print ("your lucky number is not 6, you win nothing.")
-                print ("here's a list of items that can be bought here:")
+                print ("Your lucky number is not 6, you win nothing.")
+                print ("Here's a list of items that can be bought here:")
                 print (blacksmithPurchableItems)
                 blacksmithPurchase = input("What do you wanna buy? \n")                
                 blacksmithPurchase = blacksmithPurchase.lower()
@@ -95,6 +97,3 @@ while notDead == True:
             while foodGuess != foodLocation:
                 foodGuess = input("Guess where the key to the shed is (in english)")
             print("You've found the key, and have opened the shed to find the food.")
-            
-                            
-
