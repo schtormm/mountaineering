@@ -186,8 +186,9 @@ while notDead == True:
             print("Here's what's in your inventory now:" , inventory)
             time.sleep(5)
             print("You've walked from the meadow into the woods.. \n There's something lurking in the shadows..")
-            time.sleep(2)
+            time.sleep(4)
             print("It's a WOLF!")
+            time.sleep(3)
             if "sword" in inventory:
                 print("You pull out your sword, and fight off the wolf with a few intimidating swings of the sword.")
             elif "ice pick" in inventory:
@@ -196,3 +197,11 @@ while notDead == True:
                 print("You get attacked by the wolf, and try to find something to defend yourself with. \n Unfortunately, you can't find anything useful and the wolf mauls you to death.")
                 print("Restart the game to try again.")
                 notDead = False
+            time.sleep(4)
+            print("You grab a piece of wood from a tree and walk further towards the mountain")
+            inventory.append(randomItems[1])
+            print("Your inventory is now:", inventory)
+            time.sleep(4)
+            print ("You walk towards the mountain..")
+            time.sleep(4)
+            print("You arrive at the basecamp, from here you will start climbing the mountain")
