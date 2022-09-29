@@ -4,6 +4,7 @@ notDead = True
 startingpointPassed = False
 name = ""
 foodGuess = ""
+randomItems = ["food", "wooden plank", "bicycle"]
 storePurchasableItems = ["oxygen bottle", "rope", "jacket"]
 blacksmithPurchableItems = ["ice pick", "lamp", "gloves" ]
 inventory = []
@@ -52,7 +53,8 @@ while notDead == True:
                     final_guess = input("What is the word?") 
                     if final_guess == ("bear"):
                         print("Correct, you won some climbing boots!")
-                        inventory.append("climbing boots") 
+                        inventory.append("climbing boots")
+                        print("Here's what's in your inventory now:" , inventory)
                     else:
                         print ("Incorrect, Try again")     
 
@@ -65,7 +67,7 @@ while notDead == True:
                 storePurchase = storePurchase.lower()
                 if storePurchase in storePurchasableItems:
                     inventory.append(storePurchase)
-                    print(inventory)
+                    print("Here's what's in your inventory now:" , inventory)
                 else:
                     continue
         elif villageChoice == "blacksmith":
@@ -123,6 +125,7 @@ while notDead == True:
                     print ("points:", points)
                     print ("You have won the quiz! you win a sword!")
                     inventory.append("sword")
+                    print("Here's what's in your inventory now:" , inventory)
                 if tries == 5:
                     print ("You have no tries left, game over")
             else:
@@ -133,7 +136,7 @@ while notDead == True:
                 blacksmithPurchase = blacksmithPurchase.lower()
                 if blacksmithPurchase in blacksmithPurchableItems:
                     inventory.append(blacksmithPurchase)
-                    print(inventory)
+                    print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "further": 
             startingpointPassed = True
             print("Welcome to the meadow! There's some food hidden in the shed here.. but you don't have a key")
@@ -148,3 +151,5 @@ while notDead == True:
             while foodGuess != foodLocation:
                 foodGuess = input("Guess where the key to the shed is (in english)")
             print("You've found the key, and have opened the shed to find the food.")
+            inventory.append(randomItems[0])
+            print("Here's what's in your inventory now:" , inventory)
