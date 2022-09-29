@@ -140,6 +140,7 @@ while notDead == True:
                     print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "tavern":
             print("Welcome to the tavern, here you can get useful camping equipment")
+            print ("Here's a list of items that can be bought here: \n" , tavernPurchasableItems)
             luckyDay = random.randint(1,6)
             print(luckyDay)
             if luckyDay == 6:
@@ -161,7 +162,6 @@ while notDead == True:
                         inventory.append(randomItems[chosenItem])
                         print("Here's what's in your inventory now:" , inventory)
                         win = win + 1
-            print ("Here's a list of items that can be bought here: \n" , tavernPurchasableItems)
             tavernPurchase = input("What do you wanna buy? \n")                
             tavernPurchase = tavernPurchase.lower()
             if tavernPurchase in tavernPurchasableItems:
