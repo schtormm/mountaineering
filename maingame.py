@@ -19,7 +19,7 @@ print(f"Hello, {name}! Nice to meet you! Are you ready to go on an expedition?")
 while notDead == True:
     if startingpointPassed == False:
         print(f"Welcome to the village, {name}! Here you can get your supplies")
-        villageChoice = input("Where do you wanna go, the store, the blacksmith, or do you want to go further? \n Warning, once you go further you can't come back to the village! \n")
+        villageChoice = input("Where do you wanna go, the store, the blacksmith, the tavern, or do you want to go further? \n Warning, once you go further you can't come back to the village! \n")
         villageChoice = villageChoice.lower()
         print(villageChoice)
         startingpointPassed == True
@@ -140,9 +140,30 @@ while notDead == True:
                     print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "tavern":
             print("Welcome to the tavern, here you can get useful camping equipment")
+            luckyDay = random.randint(1,6)
+            print(luckyDay)
+            if luckyDay == 6:
+                chosenItem = random.randint(0,2)
+                print (f"Today is your lucky day, {name}! If you can solve this puzzle you win one of the random items, {randomItems[chosenItem]}" )
+                win = 0
+                number = 36
+                while win < 1:
+                    numberGuess = input("Enter a number:")
+                    numberGuess = int(numberGuess)
+                    if numberGuess < number:
+                        print("Higher")
+                    elif numberGuess > number:
+                        print ("Lower")
+                    else:
+                        numberGuess == number
+                        print("That's the right number!")
+                        print ("You win:", randomItems[chosenItem])
+                        inventory.append(randomItems[chosenItem])
+                        print("Here's what's in your inventory now:" , inventory)
+                        win = win + 1
             print ("Here's a list of items that can be bought here: \n" , tavernPurchasableItems)
             tavernPurchase = input("What do you wanna buy? \n")                
-            tavernPurchase = blacksmithPurchase.lower()
+            tavernPurchase = tavernPurchase.lower()
             if tavernPurchase in tavernPurchasableItems:
                 inventory.append(tavernPurchase)
                 print("Here's what's in your inventory now:" , inventory)
