@@ -200,8 +200,24 @@ while notDead == True:
             time.sleep(4)
             print("You grab a piece of wood from a tree and walk further towards the mountain")
             inventory.append(randomItems[1])
-            print("Your inventory is now:", inventory)
+            print("Here's what's in your inventory now:" , inventory)
             time.sleep(4)
             print ("You walk towards the mountain..")
             time.sleep(4)
-            print("You arrive at the basecamp, from here you will start climbing the mountain")
+            if "tent" in inventory:
+                print("You arrive at the basecamp, from here you will start climbing the mountain")
+                print("You set up your tent, and go to sleep")
+                time.sleep(4)
+                print("Tomorrow your climb begins..")
+            else:
+                print("You arrive at the basecamp, but you don't have a tent, so you must sleep outside in the cold weather..")
+                time.sleep(4)
+                print("You froze to death")
+                time.sleep(4)
+                print("Restart the game to try again")
+                notDead = False
+            if not ("climbing shoes" in inventory):
+                print("You try to start climbing the mountain, but you struggle because you haven't got the proper gear, so you have to go back to the basecamp.")
+            else:
+                print("You start climbing..")
+            
