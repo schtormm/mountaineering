@@ -216,7 +216,7 @@ while notDead == True:
                 time.sleep(4)
                 print("Restart the game to try again")
                 notDead = False
-            if not ("climbing shoes" in inventory):
+            if not ("climbing boots" in inventory):
                 print("You try to start climbing the mountain, but you struggle because you haven't got the proper gear, so you have to go back to the basecamp.")
             else:
                 print("You start climbing..")
