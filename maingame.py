@@ -222,4 +222,17 @@ while notDead == True:
                 startingpointPassed = False
             else:
                 print("You start climbing..")
-            
+            time.sleep(3)
+            print ("In the distance, you see a old bridge..")
+            time.sleep(3)
+            print ("The bridge is broken, to repair it, you need a wooden plank and rope.")
+            time.sleep(3)
+            if not ("rope" and "wooden plank" in inventory):
+                print ("You do not have the required items to repair the bridge, you have got to go back to the village.")
+                print ("You can buy rope at the village store")
+                startingpointPassed = False
+            else:
+                print("You fix the old bridge by using your rope and wooden plank")
+                inventory.remove("wooden plank", "rope")
+                print("Here's what's in your inventory now:" , inventory)
+                
