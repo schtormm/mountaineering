@@ -6,7 +6,8 @@ name = ""
 foodGuess = ""
 randomItems = ["food", "wooden plank", "bicycle"]
 storePurchasableItems = ["oxygen bottle", "rope", "jacket"]
-blacksmithPurchableItems = ["ice pick", "lamp", "gloves" ]
+blacksmithPurchasableItems = ["ice pick", "lamp", "gloves" ]
+tavernPurchasableItems = ["tent", "backpack", "wool hat"]
 inventory = []
 
 print("Welcome to the start point of mountaineering!")
@@ -131,12 +132,25 @@ while notDead == True:
             else:
                 print ("Your lucky number is not 6, you win nothing.")
                 print ("Here's a list of items that can be bought here:")
-                print (blacksmithPurchableItems)
+                print (blacksmithPurchasableItems)
                 blacksmithPurchase = input("What do you wanna buy? \n")                
                 blacksmithPurchase = blacksmithPurchase.lower()
-                if blacksmithPurchase in blacksmithPurchableItems:
+                if blacksmithPurchase in blacksmithPurchasableItems:
                     inventory.append(blacksmithPurchase)
                     print("Here's what's in your inventory now:" , inventory)
+        elif villageChoice == "tavern":
+            print("Welcome to the tavern, here you can get useful camping equipment")
+            print ("Here's a list of items that can be bought here: \n" , tavernPurchasableItems)
+            tavernPurchase = input("What do you wanna buy? \n")                
+            tavernPurchase = blacksmithPurchase.lower()
+            if tavernPurchase in tavernPurchasableItems:
+                inventory.append(tavernPurchase)
+                print("Here's what's in your inventory now:" , inventory)
+
+        
+        
+        
+        
         elif villageChoice == "further": 
             startingpointPassed = True
             print("Welcome to the meadow! There's some food hidden in the shed here.. but you don't have a key")
@@ -146,10 +160,11 @@ while notDead == True:
                 for c in range(0,2):
                     print("x", end ="\t")
                 print("\n")
-            foodLocation = "left middle"
-            print("\n")
+            foodLocation = "left middle" or "middle left"
             while foodGuess != foodLocation:
-                foodGuess = input("Guess where the key to the shed is (in english)")
+                foodGuess = input("Guess where the key to the shed is (in english, for example; right middle)")
+                print("You've entered:", foodGuess)
             print("You've found the key, and have opened the shed to find the food.")
             inventory.append(randomItems[0])
             print("Here's what's in your inventory now:" , inventory)
+            
