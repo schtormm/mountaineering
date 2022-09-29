@@ -217,7 +217,9 @@ while notDead == True:
                 print("Restart the game to try again")
                 notDead = False
             if not ("climbing boots" in inventory):
-                print("You try to start climbing the mountain, but you struggle because you haven't got the proper gear, so you have to go back to the basecamp.")
+                print("You try to start climbing the mountain, but you struggle because you haven't got the proper gear, so you have to go back to the village to get climbing boots")
+                print("You can win the climbing boots by solving a puzzle at the village store")
+                startingpointPassed = False
             else:
                 print("You start climbing..")
             
