@@ -177,8 +177,9 @@ while notDead == True:
                 for c in range(0,2):
                     print("x", end ="\t")
                 print("\n")
-            foodLocation = "left middle" or "middle left"
-            while foodGuess != foodLocation:
+            foodLocation1 =  "middle left"
+            foodlocation2 = "left middle"
+            while foodGuess != (foodLocation1 or foodlocation2):
                 foodGuess = input("Guess where the key to the shed is (in english, for example; right middle)")
                 print("You've entered:", foodGuess)
             print("You've found the key, and have opened the shed to find the food.")
@@ -233,6 +234,7 @@ while notDead == True:
                 startingpointPassed = False
             else:
                 print("You fix the old bridge by using your rope and wooden plank")
-                inventory.remove("wooden plank", "rope")
+                inventory.remove("wooden plank")
+                inventory.remove("rope")
                 print("Here's what's in your inventory now:" , inventory)
                 
