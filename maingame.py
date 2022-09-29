@@ -1,4 +1,5 @@
 import random
+import time
 
 notDead = True
 startingpointPassed = False
@@ -167,11 +168,6 @@ while notDead == True:
             if tavernPurchase in tavernPurchasableItems:
                 inventory.append(tavernPurchase)
                 print("Here's what's in your inventory now:" , inventory)
-
-        
-        
-        
-        
         elif villageChoice == "further": 
             startingpointPassed = True
             print("Welcome to the meadow! There's some food hidden in the shed here.. but you don't have a key")
@@ -188,4 +184,15 @@ while notDead == True:
             print("You've found the key, and have opened the shed to find the food.")
             inventory.append(randomItems[0])
             print("Here's what's in your inventory now:" , inventory)
-            
+            time.sleep(5)
+            print("You've walked from the meadow into the woods.. \n There's something lurking in the shadows..")
+            time.sleep(2)
+            print("It's a WOLF!")
+            if "sword" in inventory:
+                print("You pull out your sword, and fight off the wolf with a few intimidating swings of the sword.")
+            elif "ice pick" in inventory:
+                print("You grab your ice pick, and stab the wolf in its heart. You're safe.")
+            else: 
+                print("You get attacked by the wolf, and try to find something to defend yourself with. \n Unfortunately, you can't find anything useful and the wolf mauls you to death.")
+                print("Restart the game to try again.")
+                notDead = False
