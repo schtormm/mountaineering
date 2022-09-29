@@ -74,6 +74,57 @@ while notDead == True:
             print(luckyDay)
             if luckyDay == 6:
                 print(f"Today is your lucky day, {name}! If you can solve this puzzle you win a sword!")
+                tries = 0
+                points = 0
+                quizQuestion1 = ("what is the highest mountain on earth?")
+                quizQuestion2 = ("which mountain range is spread over 7 countries in Europe?")
+                quizQuestion3 = ("how many mountains does the alps have? (answer in numbers)")
+                answer1 = ("mount everest")
+                answer2 = ("the alps")
+                answer3 = ("82")
+                while points == 0 and tries < 5:
+                    print ("give the right answers to win some gear!")
+                    print ("you have 5 tries to get 3 right answers!")
+                    print ("question 1:")
+                    print(quizQuestion1)
+                    quizGuess = input("the answer to question 1:")
+                    if quizGuess == answer1:
+                        print ("thats the right answer!")
+                        points = points + 1
+                        tries = tries + 1
+                        print ("points:", points)
+                    else:
+                        print ("wrong!")
+                        tries = tries +1
+                while points == 1:
+                    print (quizQuestion2) 
+                    quizGuess = input("the answer to question 2:")
+                    if quizGuess == answer2:
+                        print ("thats the right answer!")
+                        points = points + 1
+                        tries = tries + 1
+                        print ("points:", points)
+                    else:
+                        print ("thats the wrong answer, try again")
+                        tries = tries + 1
+                while points == 2:
+                    print ("question 3:")
+                    print (quizQuestion3)
+                    guess = input("the answer to question 3:")
+                    if guess == answer3:
+                        print ("thats the right answer!")
+                        points = points + 1
+                        tries = tries + 1
+                        print ("points:", points)
+                    else: 
+                        print ("thats the wrong answer, try again")
+                        tries = tries + 1
+                if points == 3:
+                    print ("points:", points)
+                    print ("You have won the quiz! you win a sword!")
+                    inventory.append("sword")
+                if tries == 5:
+                    print ("you have no tries left, game over")
             else:
                 print ("Your lucky number is not 6, you win nothing.")
                 print ("Here's a list of items that can be bought here:")
