@@ -1,4 +1,4 @@
-from pickle import FALSE
+
 import random
 import time
 
@@ -151,11 +151,11 @@ while notDead == True:
                 win = 0
                 number = 36
                 while win < 1:
-                    numberGuess = input("Enter a number:")
-                    numberGuess = int(numberGuess)
+                    numberGuess = int(input("Enter a number:"))
                     if numberGuess < number:
                         print("Higher")
                     elif numberGuess > number:
+
                         print ("Lower")
                     else:
                         numberGuess == number
@@ -178,9 +178,8 @@ while notDead == True:
                 for c in range(0,2):
                     print("x", end ="\t")
                 print("\n")
-            foodLocation1 =  "middle left"
-            foodlocation2 = "left middle"
-            while foodGuess != (foodLocation1 or foodlocation2):
+            foodLocations =["middle left", "left middle"]
+            while foodGuess not in foodLocations:
                 foodGuess = input("Guess where the key to the shed is (in english, for example; right middle)")
                 print("You've entered:", foodGuess)
             print("You've found the key, and have opened the shed to find the food.")
@@ -218,17 +217,18 @@ while notDead == True:
                 time.sleep(4)
                 print("Restart the game to try again")
                 notDead = False
-            if not ("climbing boots" in inventory):
+            if not "climbing boots" in inventory:
                 print("You try to start climbing the mountain, but you struggle because you haven't got the proper gear, so you have to go back to the village to get climbing boots")
                 print("You can win the climbing boots by solving a puzzle at the village store")
-                startingpointPassed = False
+                startingpointPassed = False                
+                continue
             else:
                 print("You start climbing..")
-            time.sleep(3)
-            print ("In the distance, you see a old bridge..")
-            time.sleep(3)
-            print ("The bridge is broken, to repair it, you need a wooden plank and rope.")
-            time.sleep(3)
+                time.sleep(3)
+                print ("In the distance, you see a old bridge..")
+                time.sleep(3)
+                print ("The bridge is broken, to repair it, you need a wooden plank and rope.")
+                time.sleep(3)           
             if not ("rope" and "wooden plank" in inventory):
                 print ("You do not have the required items to repair the bridge, you have got to go back to the village.")
                 print ("You can buy rope at the village store")
@@ -267,3 +267,5 @@ while notDead == True:
                     print("You go back to the entrance of the cave and continue your journey")
             elif enter == "no":
                 print ("you walk past the cave, continuing your journey towards the top")
+        elif villageChoice == "inventory":
+            print("Here's what's in your inventory now:" , inventory)
