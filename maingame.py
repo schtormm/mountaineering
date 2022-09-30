@@ -1,3 +1,4 @@
+from pickle import FALSE
 import random
 import time
 
@@ -56,8 +57,6 @@ while notDead == True:
                     if final_guess == ("bear"):
                         print("Correct, you won some climbing boots!")
                         inventory.append("climbing boots")
-                        inventory = dict.fromkeys(inventory)
-                        inventory = list(inventory.items())
                         print("Here's what's in your inventory now:" , inventory)
                     else:
                         print ("Incorrect, Try again")     
@@ -71,8 +70,6 @@ while notDead == True:
                 storePurchase = storePurchase.lower()
                 if storePurchase in storePurchasableItems:
                     inventory.append(storePurchase)
-                    inventory = dict.fromkeys(inventory)
-                    inventory = list(inventory.items())
                     print("Here's what's in your inventory now:" , inventory)
                 else:
                     continue
@@ -142,8 +139,6 @@ while notDead == True:
                 blacksmithPurchase = blacksmithPurchase.lower()
                 if blacksmithPurchase in blacksmithPurchasableItems:
                     inventory.append(blacksmithPurchase)
-                    inventory = dict.fromkeys(inventory)
-                    inventory = list(inventory.items())
                     print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "tavern":
             print("Welcome to the tavern, here you can get useful camping equipment")
@@ -173,12 +168,8 @@ while notDead == True:
             tavernPurchase = tavernPurchase.lower()
             if tavernPurchase in tavernPurchasableItems:
                 inventory.append(tavernPurchase)
-                inventory = dict.fromkeys(inventory)
-                inventory = list(inventory.items())
                 print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "further": 
-            inventory = dict.fromkeys(inventory)
-            inventory = list(inventory.items())
             startingpointPassed = True
             print("Welcome to the meadow! There's some food hidden in the shed here.. but you don't have a key")
             print("To find the key, you have to guess where on the grid the key lies... \n")
@@ -194,8 +185,6 @@ while notDead == True:
                 print("You've entered:", foodGuess)
             print("You've found the key, and have opened the shed to find the food.")
             inventory.append(randomItems[0])
-            inventory = dict.fromkeys(inventory)
-            inventory = list(inventory.items())
             print("Here's what's in your inventory now:" , inventory)
             time.sleep(5)
             print("You've walked from the meadow into the woods.. \n There's something lurking in the shadows..")
@@ -213,8 +202,6 @@ while notDead == True:
             time.sleep(4)
             print("You grab a piece of wood from a tree and walk further towards the mountain")
             inventory.append(randomItems[1])
-            inventory = dict.fromkeys(inventory)
-            inventory = list(inventory.items())
             print("Here's what's in your inventory now:" , inventory)
             time.sleep(4)
             print ("You walk towards the mountain..")
@@ -251,6 +238,32 @@ while notDead == True:
                 inventory.remove("wooden plank")
                 inventory.remove("rope")
                 print("Here's what's in your inventory now:" , inventory)
-                inventory = dict.fromkeys(inventory)
-                inventory = list(inventory.items())
-                
+            time.sleep(3)
+            print ("You start climbing further..")
+            time.sleep(3)
+            print ("While climbing toward the top of the mountain, you come across a cave..")
+            time.sleep(3)
+            print("You hear something growling in the cave, do you want to enter?")
+            enter = input("Do you want to enter the cave? (yes or no) \n ").lower()
+            if enter == "yes":
+                print ("You enter the cave")
+                if "lamp" in inventory:
+                    print("You use your lamp to bring light into the darkness of the cave")
+                    time.sleep(3)
+                    print("you see something in the corner, its a bear")
+                    time.sleep(3)
+                    print("you run walk away as fast as you can, not looking back.")
+                    time.sleep(3)
+                    chance = random.randint(1,6)
+                    if chance == 4 or 5:
+                         print("You escaped")
+                         print("you continue your journey towards the top")
+                    else:
+                        print("The bear got to you and killed you, game over")
+                        notdead = False
+                else:
+                    print("The cave is too dark and you dont have a lamp")
+                    time.sleep(3)
+                    print("You go back to the entrance of the cave and continue your journey")
+            elif enter == "no":
+                print ("you walk past the cave, continuing your journey towards the top")
