@@ -56,7 +56,8 @@ while notDead == True:
                     if final_guess == ("bear"):
                         print("Correct, you won some climbing boots!")
                         inventory.append("climbing boots")
-                        inventory = list(dict.fromkeys(inventory))
+                        inventory = dict.fromkeys(inventory)
+                        inventory = list(inventory.items())
                         print("Here's what's in your inventory now:" , inventory)
                     else:
                         print ("Incorrect, Try again")     
@@ -70,7 +71,8 @@ while notDead == True:
                 storePurchase = storePurchase.lower()
                 if storePurchase in storePurchasableItems:
                     inventory.append(storePurchase)
-                    inventory = list(dict.fromkeys(inventory))
+                    inventory = dict.fromkeys(inventory)
+                    inventory = list(inventory.items())
                     print("Here's what's in your inventory now:" , inventory)
                 else:
                     continue
@@ -140,7 +142,8 @@ while notDead == True:
                 blacksmithPurchase = blacksmithPurchase.lower()
                 if blacksmithPurchase in blacksmithPurchasableItems:
                     inventory.append(blacksmithPurchase)
-                    inventory = list(dict.fromkeys(inventory))
+                    inventory = dict.fromkeys(inventory)
+                    inventory = list(inventory.items())
                     print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "tavern":
             print("Welcome to the tavern, here you can get useful camping equipment")
@@ -170,10 +173,12 @@ while notDead == True:
             tavernPurchase = tavernPurchase.lower()
             if tavernPurchase in tavernPurchasableItems:
                 inventory.append(tavernPurchase)
-                inventory = list(dict.fromkeys(inventory))
+                inventory = dict.fromkeys(inventory)
+                inventory = list(inventory.items())
                 print("Here's what's in your inventory now:" , inventory)
         elif villageChoice == "further": 
-            inventory = list(dict.fromkeys(inventory))
+            inventory = dict.fromkeys(inventory)
+            inventory = list(inventory.items())
             startingpointPassed = True
             print("Welcome to the meadow! There's some food hidden in the shed here.. but you don't have a key")
             print("To find the key, you have to guess where on the grid the key lies... \n")
@@ -189,7 +194,8 @@ while notDead == True:
                 print("You've entered:", foodGuess)
             print("You've found the key, and have opened the shed to find the food.")
             inventory.append(randomItems[0])
-            inventory = list(dict.fromkeys(inventory))
+            inventory = dict.fromkeys(inventory)
+            inventory = list(inventory.items())
             print("Here's what's in your inventory now:" , inventory)
             time.sleep(5)
             print("You've walked from the meadow into the woods.. \n There's something lurking in the shadows..")
@@ -207,7 +213,8 @@ while notDead == True:
             time.sleep(4)
             print("You grab a piece of wood from a tree and walk further towards the mountain")
             inventory.append(randomItems[1])
-            inventory = list(dict.fromkeys(inventory))
+            inventory = dict.fromkeys(inventory)
+            inventory = list(inventory.items())
             print("Here's what's in your inventory now:" , inventory)
             time.sleep(4)
             print ("You walk towards the mountain..")
@@ -244,5 +251,6 @@ while notDead == True:
                 inventory.remove("wooden plank")
                 inventory.remove("rope")
                 print("Here's what's in your inventory now:" , inventory)
-                inventory = list(dict.fromkeys(inventory))
+                inventory = dict.fromkeys(inventory)
+                inventory = list(inventory.items())
                 
