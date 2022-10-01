@@ -260,12 +260,18 @@ while notDead == True:
                          print("you continue your journey towards the top")
                     else:
                         print("The bear got to you and killed you, game over")
-                        notdead = False
+                        notDead = False
                 else:
                     print("The cave is too dark and you dont have a lamp")
                     time.sleep(3)
                     print("You go back to the entrance of the cave and continue your journey")
             elif enter == "no":
                 print ("you walk past the cave, continuing your journey towards the top")
+            print("You've reached the glacier, this is the last point before the summit of the mountain!")
+            if "ice pick" in inventory:
+                print("You try to reach the summit, but the way to the summit is a bit unclear, so you must climb a bit with the ice pick.")
+            else: 
+                print("You didn't get the ice pick, and thus can't get to across the glacier, you slip and fall all the way down the mountain and die")
+                notDead = False
         elif villageChoice == "inventory":
             print("Here's what's in your inventory now:" , inventory)
