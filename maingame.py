@@ -270,8 +270,19 @@ while notDead == True:
             print("You've reached the glacier, this is the last point before the summit of the mountain!")
             if "ice pick" in inventory:
                 print("You try to reach the summit, but the way to the summit is a bit unclear, so you must climb a bit with the ice pick.")
+                print("To climb, you must solve a maths problem")
+                oplossing = 12.4 + (24.6 * 3.5)
+                while klimInput != oplossing:
+                    klimInput = float(input("What is the result of the calculation 12.4 + 24.6 *3.5 (please use . instead of ,)"))
+                    print("You have not managed to climb to the summit, try again ")
+                else: 
+                    print("Congratiulations, you've managed to climb to the summit and have completed this game. You can gaze here for a few more moments")
+                    time.sleep(20)
+                    print("There are more possible ways to win the game, try again if you want!")
+                    break
             else: 
                 print("You didn't get the ice pick, and thus can't get to across the glacier, you slip and fall all the way down the mountain and die")
+                print("Restart the game to try again.")
                 notDead = False
         elif villageChoice == "inventory":
             print("Here's what's in your inventory now:" , inventory)
