@@ -52,7 +52,7 @@ while notDead == True:
                     else:
                         print ("That letter is not in the word")
                         tries += 1
-                if tries == 5:
+                if tries == 5 and display != "bear":
                     final_guess = input("What is the word?") 
                     if final_guess == ("bear"):
                         print("Correct, you won some climbing boots!")
@@ -198,6 +198,7 @@ while notDead == True:
                 print("You get attacked by the wolf, and try to find something to defend yourself with. \n Unfortunately, you can't find anything useful and the wolf mauls you to death.")
                 print("Restart the game to try again.")
                 notDead = False
+                quit()
             time.sleep(4)
             print("You grab a piece of wood from a tree and walk further towards the mountain")
             inventory.append(randomItems[1])
@@ -271,18 +272,19 @@ while notDead == True:
             if "ice pick" in inventory:
                 print("You try to reach the summit, but the way to the summit is a bit unclear, so you must climb a bit with the ice pick.")
                 print("To climb, you must solve a maths problem")
-                oplossing = 12.4 + (24.6 * 3.5)
-                while klimInput != oplossing:
-                    klimInput = float(input("What is the result of the calculation 12.4 + 24.6 *3.5 (please use . instead of ,)"))
+                oplossing = 98.5
+                klimInput = float(input("What is the result of the calculation 12.4 + 24.6 *3.5 (please use . instead of ,)"))
+                if klimInput != oplossing:
                     print("You have not managed to climb to the summit, try again ")
+                    quit()
                 else: 
                     print("Congratiulations, you've managed to climb to the summit and have completed this game. You can gaze here for a few more moments")
                     time.sleep(20)
                     print("There are more possible ways to win the game, try again if you want!")
                     break
-            else: 
-                print("You didn't get the ice pick, and thus can't get to across the glacier, you slip and fall all the way down the mountain and die")
-                print("Restart the game to try again.")
-                notDead = False
+            else:
+                 print("You didn't get the ice pick, and thus can't get to across the glacier, you slip and fall all the way down the mountain and die")
+                 print("Restart the game to try again.")
+                 notDead = False
         elif villageChoice == "inventory":
             print("Here's what's in your inventory now:" , inventory)
